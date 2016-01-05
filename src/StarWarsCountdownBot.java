@@ -12,7 +12,7 @@ public class StarWarsCountdownBot {
 	public static void main(String[] args) throws TwitterException,
 			InterruptedException, ParseException {
 		Twitter twitter = TwitterFactory.getSingleton();
-		int i = 70;
+		int i = 80;
 		while (true) {
 			SimpleDateFormat sdf = new SimpleDateFormat("ddMMyyyy");
 			int temp = daysBetween(Calendar.getInstance().getTime(),
