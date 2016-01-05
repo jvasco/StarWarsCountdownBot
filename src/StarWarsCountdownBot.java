@@ -17,7 +17,7 @@ public class StarWarsCountdownBot {
 			SimpleDateFormat sdf = new SimpleDateFormat("ddMMyyyy");
 			int temp = daysBetween(Calendar.getInstance().getTime(),
 					sdf.parse("16122016"));
-			twitter.updateStatus(temp + " days until #RogueOne! " + i);
+			twitter.updateStatus(temp + " Now this is podracing! " + i);
 			i++;
 			Thread.sleep(8000);
 		}
