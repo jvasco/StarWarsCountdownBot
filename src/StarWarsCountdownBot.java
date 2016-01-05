@@ -1,10 +1,11 @@
+import twitter4j.TwitterException;
+import twitter4j.TwitterFactory;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import twitter4j.Twitter;
-import twitter4j.TwitterException;
-import twitter4j.TwitterFactory;
+
 
 public class StarWarsCountdownBot {
 	public static void main(String[] args) throws TwitterException,
