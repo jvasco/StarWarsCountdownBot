@@ -1,19 +1,24 @@
+import twitter4j.TwitterFactory;
+import twitter4j.TwitterException;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-
 import twitter4j.Twitter;
 
 
 public class StarWarsCountdownBot {
-	public static void main(String[] args) throws InterruptedException {
-
-		int i = 15;
+	public static void main(String[] args) throws TwitterException,
+			InterruptedException, ParseException {
+		Twitter twitter = TwitterFactory.getSingleton();
+		int i = 19;
 		while (true) {
-			System.out.println(i);
+			SimpleDateFormat sdf = new SimpleDateFormat("ddMMyyyy");
+			int temp = daysBetween(Calendar.getInstance().getTime(),
+					sdf.parse("16122016"));
+			twitter.updateStatus(temp + " days until #RogueOne! " + i);
 			i++;
-			Twitter.class.getClass();
 			Thread.sleep(8000);
 		}
 
