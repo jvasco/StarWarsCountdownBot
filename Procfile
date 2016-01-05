@@ -1,1 +1,1 @@
-web: java -Dhttp.port=$PORT $JAVA_OPTS -cp target/classes:target/dependency/* StarWarsCountdownBot
+web: java -Dport=$PORT $JAVA_OPTS -cp target/classes:target/dependency/* StarWarsCountdownBot
