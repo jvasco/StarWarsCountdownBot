@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -cp target/classes:target/dependency/* StarWarsCountdownBot && java $JAVA_OPTS -Ddw.server.connector.port=$PORT
+web: java $JAVA_OPTS -Dserver.port=$PORT -cp target/classes:target/dependency/* StarWarsCountdownBot
