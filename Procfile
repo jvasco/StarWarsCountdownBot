@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -cp target/classes:target/dependency/* StarWarsCountdownBot
+java -classpath .;..\lib\twitter4j-core-4.0.jar StarWarsCountdownBot
