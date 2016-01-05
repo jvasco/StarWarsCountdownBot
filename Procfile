@@ -1,1 +1,1 @@
-java -classpath .;..\lib\twitter4j-core-4.0.jar StarWarsCountdownBot
+web: java -classpath .;..\lib\twitter4j-core-4.0.jar StarWarsCountdownBot
