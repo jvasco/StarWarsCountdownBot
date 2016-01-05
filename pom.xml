@@ -10,7 +10,12 @@
   		<version>4.0.4</version>
   		<type>pom</type>
   	</dependency>
-    </dependencies>
+  	<dependency>
+  		<groupId>org.twitter4j</groupId>
+  		<artifactId>twitter4j-core</artifactId>
+  		<version>4.0.4</version>
+  	</dependency>
+  </dependencies>
   <build>
     <sourceDirectory>src</sourceDirectory>
     <plugins>
