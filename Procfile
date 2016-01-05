@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -cp twitter4l-core-4.0.4.jar StarWarsCountdownBot.java
+web: java $JAVA_OPTS -d twitter4l-core-4.0.4.jar StarWarsCountdownBot.java
