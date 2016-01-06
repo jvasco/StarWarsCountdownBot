@@ -31,7 +31,7 @@ public class StarWarsCountdownBot {
 				// TODO Auto-generated catch block
 			}
 			}
-		Query query = new Query("\"@SW_Countdown\"");
+		Query query = new Query("\"Does it work? @SW_Countdown\"");
 		QueryResult result;
 		try 
 		{
