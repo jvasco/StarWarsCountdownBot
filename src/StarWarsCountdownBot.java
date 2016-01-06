@@ -27,9 +27,12 @@ public class StarWarsCountdownBot {
 			int hour = cal.get(Calendar.HOUR_OF_DAY);
 			if (hour==12)
 			{
+				System.out.println("Step 1");
 				try 
 				{
+					System.out.println("about to tweet");
 					twitter.updateStatus(temp + " days until #RogueOne!!");
+				System.out.println("should have tweeted by now");
 				} catch (TwitterException e) 
 				{
 				}
