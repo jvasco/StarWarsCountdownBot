@@ -40,14 +40,13 @@ public class StarWarsCountdownBot {
 			QueryResult result;
 			result = twitter.search(query);
 			result.getTweets();
-			List<String> replies = new ArrayList();
+			List<String> replies = new ArrayList<String>();
 	        replies.add( " Now this is podracing!");
 	        replies.add(" I'm a person and my name is Anakin!");
 	        replies.add(" Yippee!");
 	        replies.add(" It's working. It's working!!!!!");
 	        int i = 0;
-			for (Status tweet : result.getTweets())
-			{
+			Status tweet=result.getTweets().get(0);
 				StatusUpdate statusUpdate = new StatusUpdate(".@" + tweet.getUser().getScreenName() + replies.get(i));
 				i++;
 				statusUpdate.inReplyToStatusId(tweet.getId());
@@ -57,7 +56,7 @@ public class StarWarsCountdownBot {
 				{
 					i=0;
 				}
-			}
+	
 		} 
 		catch (TwitterException e) 
 		{
