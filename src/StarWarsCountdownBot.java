@@ -1,6 +1,7 @@
 import twitter4j.Query;
 import twitter4j.QueryResult;
 import twitter4j.Status;
+import twitter4j.StatusUpdate;
 import twitter4j.TwitterFactory;
 import twitter4j.TwitterException;
 
@@ -36,7 +37,9 @@ public class StarWarsCountdownBot {
 		{
 			result = twitter.search(query);
 			Status tweetResult = result.getTweets().get(0);
-			twitter.updateStatus(".@" + tweetResult.getUser().getScreenName() + " It's working. It's working!!!");
+			StatusUpdate statusUpdate = new StatusUpdate(".@" + tweetResult.getUser().getScreenName() + " It's working. It's working!!!");
+			statusUpdate.inReplyToStatusId(tweetResult.getId());
+			Status status = twitter.updateStatus(statusUpdate);
 		} 
 		catch (TwitterException e) 
 		{
