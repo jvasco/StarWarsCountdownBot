@@ -27,11 +27,12 @@ public class StarWarsCountdownBot {
 			int hour = cal.get(Calendar.HOUR_OF_DAY);
 			if (hour==12)
 			{
-			try {
-				twitter.updateStatus(temp + " days until #RogueOne!");
-			} catch (TwitterException e) {
-				// TODO Auto-generated catch block
-			}
+				try 
+				{
+					twitter.updateStatus(temp + " days until #RogueOne!!");
+				} catch (TwitterException e) 
+				{
+				}
 			}
 		
 		try 
