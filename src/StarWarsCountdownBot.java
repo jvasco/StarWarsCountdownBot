@@ -31,10 +31,11 @@ public class StarWarsCountdownBot {
 				// TODO Auto-generated catch block
 			}
 			}
-		Query query = new Query("\"Does it work? @SW_Countdown\"");
-		QueryResult result;
+		
 		try 
-		{
+		{	
+			Query query = new Query("Does it work? @SW_Countdown");
+			QueryResult result;
 			result = twitter.search(query);
 			Status tweetResult = result.getTweets().get(0);
 			StatusUpdate statusUpdate = new StatusUpdate(".@" + tweetResult.getUser().getScreenName() + " It's working. It's working!!!");
