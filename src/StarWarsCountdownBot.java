@@ -24,6 +24,7 @@ public class StarWarsCountdownBot {
 			int temp = daysBetween(Calendar.getInstance().getTime(),
 					sdf.parse("16122016"));
 			int hour = cal.get(Calendar.HOUR_OF_DAY);
+			System.out.println("DTRJN");
 			if (hour==12)
 			{
 			try {
@@ -35,12 +36,13 @@ public class StarWarsCountdownBot {
 		
 		try 
 		{	
-			Query query = new Query("\"Hola @SW_Countdown\"");
+			Query query = new Query("\"What's up @SW_Countdown\"");
 			QueryResult result;
 			result = twitter.search(query);
+			result.getTweets();
 			for (Status tweet : result.getTweets())
 			{
-			StatusUpdate statusUpdate = new StatusUpdate(".@" + tweet.getUser().getScreenName() + " It's working...It's working!");
+			StatusUpdate statusUpdate = new StatusUpdate(".@" + tweet.getUser().getScreenName() + " It's working......It's working!");
 			statusUpdate.inReplyToStatusId(tweet.getId());
 			twitter.updateStatus(statusUpdate);
 			System.out.println("YES");
