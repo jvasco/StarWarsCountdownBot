@@ -7,6 +7,7 @@ import twitter4j.TwitterException;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -24,7 +25,6 @@ public class StarWarsCountdownBot {
 			int temp = daysBetween(Calendar.getInstance().getTime(),
 					sdf.parse("16122016"));
 			int hour = cal.get(Calendar.HOUR_OF_DAY);
-			System.out.println("DTRJN");
 			if (hour==12)
 			{
 			try {
@@ -36,17 +36,27 @@ public class StarWarsCountdownBot {
 		
 		try 
 		{	
-			Query query = new Query("\"What's up @SW_Countdown\"");
+			Query query = new Query("\"@SW_Countdown\"");
 			QueryResult result;
 			result = twitter.search(query);
 			result.getTweets();
+			List<String> replies = new ArrayList();
+	        replies.add( " Now this is podracing!");
+	        replies.add(" I'm a person and my name is Anakin!");
+	        replies.add(" Yippee!");
+	        replies.add(" It's working. It's working!!!!!");
+	        int i = 0;
 			for (Status tweet : result.getTweets())
 			{
-			StatusUpdate statusUpdate = new StatusUpdate(".@" + tweet.getUser().getScreenName() + " It's working......It's working!");
-			statusUpdate.inReplyToStatusId(tweet.getId());
-			twitter.updateStatus(statusUpdate);
-			System.out.println("YES");
-
+				StatusUpdate statusUpdate = new StatusUpdate(".@" + tweet.getUser().getScreenName() + replies.get(i));
+				i++;
+				statusUpdate.inReplyToStatusId(tweet.getId());
+				twitter.updateStatus(statusUpdate);
+				System.out.println("YES");
+				if (i==replies.size()-1)
+				{
+					i=0;
+				}
 			}
 		} 
 		catch (TwitterException e) 
