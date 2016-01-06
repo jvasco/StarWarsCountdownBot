@@ -14,7 +14,7 @@ import twitter4j.Twitter;
 
 public class StarWarsCountdownBot {
 	public static void main(String[] args) throws 
-			InterruptedException, ParseException, TwitterException {
+			InterruptedException, ParseException {
 		Twitter twitter = TwitterFactory.getSingleton();
 		Calendar cal = Calendar.getInstance();
 		while (true) {
@@ -32,13 +32,14 @@ public class StarWarsCountdownBot {
 			}
 		Query query = new Query("@SW_Countdown");
 		QueryResult result;
-		result = twitter.search(query);
-		Status tweetResult = result.getTweets().get(0);
-		try {
+		try 
+		{
+			result = twitter.search(query);
+			Status tweetResult = result.getTweets().get(0);
 			twitter.updateStatus(".@" + tweetResult.getUser().getScreenName() + " It's working. It's working!!!");
-		} catch (TwitterException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		} 
+		catch (TwitterException e) 
+		{
 		}
 		}
 
