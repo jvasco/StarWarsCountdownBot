@@ -35,12 +35,12 @@ public class StarWarsCountdownBot {
 		
 		try 
 		{	
-			Query query = new Query("\"Hello @SW_Countdown\"");
+			Query query = new Query("\"Hola @SW_Countdown\"");
 			QueryResult result;
 			result = twitter.search(query);
 			for (Status tweet : result.getTweets())
 			{
-			StatusUpdate statusUpdate = new StatusUpdate(".@" + tweet.getUser().getScreenName() + " It's working. It's working!");
+			StatusUpdate statusUpdate = new StatusUpdate(".@" + tweet.getUser().getScreenName() + " It's working...It's working!");
 			statusUpdate.inReplyToStatusId(tweet.getId());
 			twitter.updateStatus(statusUpdate);
 			System.out.println("YES");
