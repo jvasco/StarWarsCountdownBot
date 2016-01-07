@@ -55,7 +55,6 @@ public class StarWarsCountdownBot {
 	        
 			Status tweet=result.getTweets().get(0);
 				StatusUpdate statusUpdate = new StatusUpdate(".@" + tweet.getUser().getScreenName() + replies.get((int)(replies.size()*Math.random())));
-				i++;
 				statusUpdate.inReplyToStatusId(tweet.getId());
 				twitter.updateStatus(statusUpdate);
 				System.out.println("YES");
