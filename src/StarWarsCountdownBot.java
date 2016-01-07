@@ -25,27 +25,11 @@ public class StarWarsCountdownBot {
 			int temp = daysBetween(Calendar.getInstance().getTime(),
 					sdf.parse("16122016"));
 			int hour = cal.get(Calendar.HOUR_OF_DAY);
-			if (hour==22)
+			for (int j = 0; j<=24; j++)
 			{
-				System.out.println("Step 1");
-				try 
+				if (hour==j)
 				{
-					System.out.println("about to tweet");
-					twitter.updateStatus("Reminder: " + temp + " days until #RogueOne!!");
-				System.out.println("should have tweeted by now");
-				} catch (TwitterException e) 
-				{
-				}
-			}
-			if (hour==12)
-			{
-				try 
-				{
-					System.out.println("about to tweet");
-					twitter.updateStatus(temp + " days until #RogueOne!!");
-				System.out.println("should have tweeted by now");
-				} catch (TwitterException e) 
-				{
+					System.out.println(hour);
 				}
 			}
 		
@@ -62,7 +46,7 @@ public class StarWarsCountdownBot {
 	        replies.add(" It's working. It's working!!!!!");
 	        int i = 0;
 			Status tweet=result.getTweets().get(0);
-				StatusUpdate statusUpdate = new StatusUpdate(".@" + tweet.getUser().getScreenName() + replies.get(i));
+				StatusUpdate statusUpdate = new StatusUpdate(".@" + tweet.getUser().getScreenName() + replies.get((int)(replies.size()*Math.random())));
 				i++;
 				statusUpdate.inReplyToStatusId(tweet.getId());
 				twitter.updateStatus(statusUpdate);
