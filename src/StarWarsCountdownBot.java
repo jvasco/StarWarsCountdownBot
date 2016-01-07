@@ -25,7 +25,7 @@ public class StarWarsCountdownBot {
 			int temp = daysBetween(Calendar.getInstance().getTime(),
 					sdf.parse("16122016"));
 			int hour = cal.get(Calendar.HOUR_OF_DAY);
-			if (hour==21)
+			if (hour==22)
 			{
 				System.out.println("Step 1");
 				try 
