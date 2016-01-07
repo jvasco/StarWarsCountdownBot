@@ -37,6 +37,7 @@ public class StarWarsCountdownBot {
 			}
 			if (hour==12)
 			{
+				System.out.println("12");
 				try 
 				{
 					System.out.println("about to tweet");
