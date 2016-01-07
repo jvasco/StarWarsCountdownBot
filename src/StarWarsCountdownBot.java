@@ -49,7 +49,7 @@ public class StarWarsCountdownBot {
 				{
 				}
 			}
-			if (hour==24)
+			if (hour==0)
 			{
 				try
 				{
