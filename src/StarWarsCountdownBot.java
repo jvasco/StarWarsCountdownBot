@@ -26,7 +26,37 @@ public class StarWarsCountdownBot {
 			int temp = daysBetween(Calendar.getInstance().getTime(),
 					sdf.parse("16122016"));
 			int hour = cal.get(Calendar.HOUR_OF_DAY);
-			System.out.println("Time is: " + hour);
+			if (hour==22)
+			{
+				try 
+				{
+					twitter.updateStatus("Reminder: " + temp + " days until #RogueOne!!");
+				} catch (TwitterException e) 
+				{
+				}
+			}
+			if (hour==12)
+			{
+				try 
+				{
+					System.out.println("about to tweet");
+					twitter.updateStatus(temp + " days until #RogueOne!!");
+				System.out.println("should have tweeted by now");
+				} catch (TwitterException e) 
+				{
+				}
+			}
+			if (hour==0)
+			{
+				try
+				{
+					twitter.updateStatus("Good night, Twitter.");
+				}
+				catch( TwitterException e)
+				{
+					
+				}
+			}
 		
 		try 
 		{	
