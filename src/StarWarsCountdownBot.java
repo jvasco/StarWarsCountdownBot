@@ -26,6 +26,7 @@ public class StarWarsCountdownBot {
 			int temp = daysBetween(Calendar.getInstance().getTime(),
 					sdf.parse("16122016"));
 			int hour = cal.get(Calendar.HOUR_OF_DAY);
+			System.out.println(hour);
 			if (hour==22)
 			{
 				try 
@@ -87,7 +88,7 @@ public class StarWarsCountdownBot {
 			
 			if (tweet.equals(firsttweet)==false)
 			{
-				StatusUpdate statusUpdate = new StatusUpdate(".@" + tweet.getUser().getScreenName() + replies.get((int)(replies.size()*Math.random())));
+				StatusUpdate statusUpdate = new StatusUpdate("@" + tweet.getUser().getScreenName() + replies.get((int)(replies.size()*Math.random())));
 				statusUpdate.inReplyToStatusId(tweet.getId());
 				twitter.updateStatus(statusUpdate);
 				System.out.println("YES");
