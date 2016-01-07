@@ -20,14 +20,46 @@ public class StarWarsCountdownBot {
 			InterruptedException, ParseException {
 		Twitter twitter = TwitterFactory.getSingleton();
 		Calendar cal = Calendar.getInstance();
+		Status firsttweet=null;
 		while (true) {
-			System.out.println("ABC");
 			SimpleDateFormat sdf = new SimpleDateFormat("ddMMyyyy");
 			int temp = daysBetween(Calendar.getInstance().getTime(),
 					sdf.parse("16122016"));
-			System.out.println("test");
 			int hour = cal.get(Calendar.HOUR_OF_DAY);
-			System.out.println("Time is: " + hour);
+			if (hour==22)
+			{
+				System.out.println("Step 1");
+				try 
+				{
+					System.out.println("about to tweet");
+					twitter.updateStatus("Reminder: " + temp + " days until #RogueOne!!");
+				System.out.println("should have tweeted by now");
+				} catch (TwitterException e) 
+				{
+				}
+			}
+			if (hour==12)
+			{
+				try 
+				{
+					System.out.println("about to tweet");
+					twitter.updateStatus(temp + " days until #RogueOne!!");
+				System.out.println("should have tweeted by now");
+				} catch (TwitterException e) 
+				{
+				}
+			}
+			if (hour==24)
+			{
+				try
+				{
+					twitter.updateStatus("Good night, Twitter.");
+				}
+				catch( TwitterException e)
+				{
+					
+				}
+			}
 		
 		try 
 		{	
@@ -54,11 +86,15 @@ public class StarWarsCountdownBot {
 	        replies.add( " It's a trap!");
 	        
 			Status tweet=result.getTweets().get(0);
+			
+			if (tweet.equals(firsttweet)==false)
+			{
 				StatusUpdate statusUpdate = new StatusUpdate(".@" + tweet.getUser().getScreenName() + replies.get((int)(replies.size()*Math.random())));
 				statusUpdate.inReplyToStatusId(tweet.getId());
 				twitter.updateStatus(statusUpdate);
 				System.out.println("YES");
-				
+				firsttweet=tweet;
+			}
 	
 		} 
 		catch (TwitterException e) 
