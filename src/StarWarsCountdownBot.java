@@ -27,13 +27,7 @@ public class StarWarsCountdownBot {
 					sdf.parse("16122016"));
 			System.out.println("test");
 			int hour = cal.get(Calendar.HOUR_OF_DAY);
-			for (int j = 0; j<=24; j++)
-			{
-				if (hour==j)
-				{
-					System.out.println("TIme is: " +hour);
-				}
-			}
+			System.out.println("Time is: " + hour);
 		
 		try 
 		{	
