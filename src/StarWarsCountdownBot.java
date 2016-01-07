@@ -26,7 +26,6 @@ public class StarWarsCountdownBot {
 			int temp = daysBetween(Calendar.getInstance().getTime(),
 					sdf.parse("16122016"));
 			int hour = cal.get(Calendar.HOUR_OF_DAY);
-			System.out.println(hour);
 			if (hour==22)
 			{
 				try 
@@ -41,9 +40,7 @@ public class StarWarsCountdownBot {
 				System.out.println("12");
 				try 
 				{
-					System.out.println("about to tweet");
 					twitter.updateStatus(temp + " days until #RogueOne!!");
-				System.out.println("should have tweeted by now");
 				} catch (TwitterException e) 
 				{
 				}
@@ -83,8 +80,19 @@ public class StarWarsCountdownBot {
 	        replies.add(" Never tell me the odds!");
 	        replies.add(" Laugh it up, fuzzball!");
 	        replies.add( " It's a trap!");
-	        
-			Status tweet=result.getTweets().get(0);
+	        replies.add(" Traitor!");
+	        replies.add(" Fear leads to anger. Anger leads to hate. Hate leads to suffering.");
+	        replies.add("Strike me down and I will become more powerful than you could possibly imagine.");
+	        replies.add(" If you only knew the power of the dark side.");
+	        replies.add(" Aren't you a little short for a stormtrooper?");
+	        replies.add(" Why you stuck-up, half-witted, scruffy-looking nerf-herder!");
+	        replies.add(" You’re breaking my heart! You’re going down a path I cannot follow!");
+	        replies.add(" You were the chosen one! It was said that you would destroy the Sith, not join them!");
+			replies.add(" I find you lack of faith disturbing.");
+			replies.add(" The Force is strong with this one");
+			replies.add(" The Force will be with you, always.");
+			
+	        Status tweet=result.getTweets().get(0);
 			
 			if (tweet.equals(firsttweet)==false)
 			{
