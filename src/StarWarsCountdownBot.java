@@ -30,6 +30,7 @@ public class StarWarsCountdownBot {
 			{
 				try 
 				{
+					
 					twitter.updateStatus("Reminder: " + temp + " days until #RogueOne!!");
 				} catch (TwitterException e) 
 				{
@@ -40,9 +41,11 @@ public class StarWarsCountdownBot {
 				System.out.println("12");
 				try 
 				{
+					System.out.println("About to tweet");
 					twitter.updateStatus(temp + " days until #RogueOne!!");
 				} catch (TwitterException e) 
 				{
+					System.out.println("Duplicate tweet for some reason");
 				}
 			}
 			if (hour==0)
@@ -96,11 +99,13 @@ public class StarWarsCountdownBot {
 			
 			if (tweet.equals(firsttweet)==false)
 			{
+				
 				StatusUpdate statusUpdate = new StatusUpdate("@" + tweet.getUser().getScreenName() + replies.get((int)(replies.size()*Math.random())));
 				statusUpdate.inReplyToStatusId(tweet.getId());
 				twitter.updateStatus(statusUpdate);
 				System.out.println("YES");
 				firsttweet=tweet;
+				
 			}
 	
 		} 
