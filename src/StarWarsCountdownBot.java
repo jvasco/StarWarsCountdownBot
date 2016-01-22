@@ -82,10 +82,10 @@ public class StarWarsCountdownBot {
 	        replies.add(" Only a Sith deals in absolutes.");
 	        replies.add(" Never tell me the odds!");
 	        replies.add(" Laugh it up, fuzzball!");
-	        replies.add( " It's a trap!");
+	        replies.add(" It's a trap!");
 	        replies.add(" Traitor!");
 	        replies.add(" Fear leads to anger. Anger leads to hate. Hate leads to suffering.");
-	        replies.add("Strike me down and I will become more powerful than you could possibly imagine.");
+	        replies.add(" Strike me down and I will become more powerful than you could possibly imagine.");
 	        replies.add(" If you only knew the power of the dark side.");
 	        replies.add(" Aren't you a little short for a stormtrooper?");
 	        replies.add(" Why you stuck-up, half-witted, scruffy-looking nerf-herder!");
@@ -96,15 +96,18 @@ public class StarWarsCountdownBot {
 			replies.add(" The Force will be with you, always.");
 			
 	        Status tweet=result.getTweets().get(0);
+			Date date = new Date();
 			
 			if (tweet.equals(firsttweet)==false)
 			{
-				
+				if (tweet.getCreatedAt().getTime()< date.getTime()+600000)
+				{
 				StatusUpdate statusUpdate = new StatusUpdate("@" + tweet.getUser().getScreenName() + replies.get((int)(replies.size()*Math.random())));
 				statusUpdate.inReplyToStatusId(tweet.getId());
 				twitter.updateStatus(statusUpdate);
 				System.out.println("YES");
 				firsttweet=tweet;
+				}
 				
 			}
 	
