@@ -98,9 +98,9 @@ public class StarWarsCountdownBot {
 	        Status tweet=result.getTweets().get(0);
 			Date date = new Date();
 			
-			if (tweet.equals(firsttweet)==false)
+			if (tweet.equals(firsttweet)==false&&tweet.getUser().getScreenName!="SW_Countdown")
 			{
-				if (tweet.getCreatedAt().getTime()< date.getTime()+6000000)
+				if (tweet.getCreatedAt().getTime()< date.getTime()+300000)
 				{
 				StatusUpdate statusUpdate = new StatusUpdate("@" + tweet.getUser().getScreenName() + replies.get((int)(replies.size()*Math.random())));
 				statusUpdate.inReplyToStatusId(tweet.getId());
@@ -115,6 +115,7 @@ public class StarWarsCountdownBot {
 		catch (TwitterException e) 
 		{
 		}
+		
 		}
 
 	}
