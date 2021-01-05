@@ -21,6 +21,7 @@ public class StarWarsCountdownBot {
 		Twitter twitter = TwitterFactory.getSingleton();
 		Calendar cal = Calendar.getInstance();
 		Status firsttweet=null;
+		//hey I'm back! what a throwback!
 		while (true) {
 			SimpleDateFormat sdf = new SimpleDateFormat("ddMMyyyy");
 			int temp = daysBetween(Calendar.getInstance().getTime(),
